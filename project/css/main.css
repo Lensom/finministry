@@ -107,6 +107,9 @@ a {
 }
 body {
   background-color: #0f1823;
+  position: relative;
+  background-image: url("../img/back.jpg");
+  background-size: cover;
 }
 .wrapper {
   max-width: 1190px;
@@ -124,6 +127,42 @@ body {
 .title span {
   color: #05c9d8;
   font-family: "AvenirNextBold", sans-serif;
+}
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.bg-1 {
+  width: 70%;
+  left: 20%;
+  top: 100px;
+}
+.bg-2 {
+  width: 65%;
+  left: 68%;
+  top: 78%;
+}
+.bg-3 {
+  left: -27%;
+  width: 60%;
+  top: 110%;
+}
+.bg-4 {
+  left: 75%;
+  top: 150%;
+  width: 60%;
+}
+.bg-5 {
+  width: 60%;
+  top: 300%;
+  left: -24%;
+}
+.bg-6 {
+  width: 45%;
+  top: 335%;
+  left: 78%;
 }
 .header {
   padding-bottom: 120px;
@@ -365,6 +404,10 @@ body {
 .partner-image {
   min-width: 75px;
 }
+.brands {
+  position: relative;
+  z-index: 1;
+}
 .brands-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -389,7 +432,7 @@ body {
 .brands-item img {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 10px;
   max-width: 95%;
 }
 .brands-subtitle {
@@ -398,6 +441,7 @@ body {
   font-size: 24px;
   line-height: 30px;
   text-transform: uppercase;
+  margin-bottom: 18px;
 }
 .brands-text {
   color: #cad9ea;
@@ -406,7 +450,7 @@ body {
   line-height: 25px;
 }
 .brands-body {
-  padding: 25px;
+  padding: 25px 60px 65px;
 }
 .brands-margin {
   margin-right: 400px;
@@ -420,7 +464,7 @@ body {
   line-height: 58px;
 }
 .signup-button {
-  background-color: #05c9d8;
+  background: #05c9d8;
   color: #fff;
   font-family: "AvenirNextBold", sans-serif;
   font-size: 18px;
@@ -430,21 +474,29 @@ body {
   padding: 30px 66px;
   border-radius: 10px;
   display: inline-block;
-  -webkit-transform: skewX(6deg);
-          transform: skewX(6deg);
+  -webkit-transform: perspective(1600px) rotateX(20deg);
+          transform: perspective(1600px) rotateX(20deg);
   position: relative;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
 }
-.signup-button:after {
+.signup-button:hover {
+  background: #fff;
+  color: #000;
+}
+.signup-button-wrapper {
+  position: relative;
+  margin-top: 86px;
+}
+.signup-button-wrapper:after {
   position: absolute;
   content: '';
-  top: -94px;
-  left: 30px;
+  top: -92px;
+  left: 50%;
+  margin-left: -107px;
   width: 215px;
   height: 132px;
   background-image: url("../img/money@2x.png");
-}
-.signup-button-wrapper {
-  margin-top: 86px;
 }
 .footer {
   padding: 60px 0;
@@ -546,8 +598,11 @@ g {
 }
 .owl-dots {
   position: absolute;
-  top: -32px;
-  right: 0;
+  top: -40px;
+  left: 74%;
+}
+.owl-theme .owl-dots .owl-dot:focus {
+  outline: none;
 }
 .owl-theme .owl-dots .owl-dot span {
   background-color: #fff;
@@ -605,6 +660,10 @@ g {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .owl-dots {
+    top: 30px;
+    left: 10px;
+  }
 }
 @media (max-width: 768px) {
   .clients {
@@ -655,6 +714,7 @@ g {
   .partner-note {
     margin: 20px 0;
     max-width: 100%;
+    text-align: center;
   }
   .partner-items {
     margin: 30px 0 0;
@@ -676,6 +736,10 @@ g {
   .partner-image img {
     margin: 0 auto;
   }
+  .owl-dots {
+    left: 50%;
+    margin-left: -102px;
+  }
   .title {
     text-align: center;
   }
@@ -692,6 +756,9 @@ g {
   .footer-li a {
     font-size: 16px;
     line-height: 32px;
+  }
+  .signup {
+    padding: 60px 0;
   }
 }
 @media (max-width: 540px) {
@@ -715,12 +782,25 @@ g {
     font-size: 26px;
     line-height: 32px;
   }
+  .header-separator {
+    margin: -4px 7px 0 12px;
+  }
+  .header-link {
+    top: -5px;
+  }
   .title {
     font-size: 26px;
     line-height: 32px;
   }
   .clients-subtitle {
     font-size: 26px;
+  }
+  .brands-item {
+    max-width: 286px;
+    height: 366px;
+  }
+  .brands-body {
+    padding: 15px 15px 45px;
   }
 }
 @media (max-width: 640px) {

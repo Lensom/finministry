@@ -4,21 +4,26 @@ $(document).ready(function() {
 
     // OWL CAROUSEL
     $('.owl-carousel').owlCarousel({
-        nav: true,
-        dots: true,
-        items: 2,
-        loop: true,
-        margin: 60,
-        rewindNav: false,
+        center:true,
         responsiveClass: true,
-        autoWidth:true,
-        // responsive:{
-        //     600:{
-        //         items:4
-        //     }
-        // }
+        autoWidth: true,
+        margin: 30,
+        tems: 1,
+        loop: true,
+        responsive:{
+            1440:{
+                nav: false,
+                dots: true,
+                items: 4,
+                loop: true,
+                margin: 60,
+                responsiveClass: false,
+                autoWidth:false,
+                center:true,
+
+            }
+        }
     });
 
 });
-
 
