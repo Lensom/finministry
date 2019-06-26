@@ -25,5 +25,28 @@ $(document).ready(function() {
         }
     });
 
+    
+
 });
+	
+	$(function() {
+		var target_block = $(".signup-title");
+		var blockStatus = true;
+		$(window).scroll(function() {
+			var scrollEvent = ($(window).scrollTop() > (target_block.position().top - $(window).height()));
+			if(scrollEvent && blockStatus) {
+				blockStatus = false;
+				$({numberValue: 0}).animate({numberValue: 100}, {
+					duration: 2000, 
+					easing: "linear",
+					step: function(val) {
+						$("#lines").html(Math.ceil(val));
+						
+					}
+				});
+			}
+		});
+	});
+	
+
 
